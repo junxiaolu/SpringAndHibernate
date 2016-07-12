@@ -1,0 +1,61 @@
+<html>
+<script>
+	function showImg (e) {
+		alert(e);
+		document.getElementById("1mg1").src = 'https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/nuomi_510f7472.png';
+	}
+	function shit(e) {
+		alert(e);
+	}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+
+<a href="#" id="zb">abc</a>
+<script type="text/javascript">
+function gid(id){
+    return document.getElementById(id);
+}
+function foo(event){
+    event= event || window.event;
+    var x = event.clientX;
+    var y = event.clientY;
+    //document.writeln("X 坐标: " + x + ", Y 坐标: " + y);
+    //document.write("X 坐标: " + event.offsetX + ", Y 坐标: " + event.offsetY);
+    //document.write("X 坐标: " + event.x + ", Y 坐标: " + event.y);
+    //document.write("X 坐标: " + event.screenX + ", Y 坐标: " + event.screenY);
+    document.all.div1.innerHTML="X 坐标: " + x + ", Y 坐标: " + y + "<br>" + 
+    "X 坐标: " + event.offsetX + ", Y 坐标: " + event.offsetY 
+    + "<br>X 坐标: " + event.x + ", Y 坐标: " + event.y
+    + "<br>X 坐标: " + event.screenX + ", Y 坐标: " + event.screenY;
+}
+
+</script>
+<h2>Hello World!</h2>
+ <select onchange="showImg(this)">
+	<option value=”img1″>城市生活</option>
+	<option value=”img2″>城市生活2</option>
+</select>
+<UL onclick="shit(this);">
+	<li><img  id = "1mg1" src="https://www.baidu.com/img/bd_logo1.png"></img></li>
+	<li>FUKC</li>
+</UL>
+<dl>11
+	<dt>fdsafd
+		<dd>fdsafd</dd><dd>dfsaf</dd>
+	</dt>
+	<dt>fdsafd
+		<dd>fdsafd
+	</dt>
+</dl>
+<div id="div1" style="float:right">111111111111111 </div>
+</body>
+</html>
+<script>
+  // gid('zb').attachEvent&&gid('zb').attachEvent("onclick", foo);
+   (function(e) {
+	   e.attachEvent?e.attachEvent("click", foo): e.addEventListener("click",  foo);
+   })(gid('zb'));   
+   document.all.div1.addEventListener("click", foo);
+   
+</script>
