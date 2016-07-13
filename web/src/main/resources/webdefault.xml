@@ -389,14 +389,14 @@
     <locale-encoding-mapping><locale>zh_TW</locale><encoding>Big5</encoding></locale-encoding-mapping>   
   </locale-encoding-mapping-list>
   
-  <security-constraint>
+<!--   <security-constraint>
     <web-resource-collection>
       <web-resource-name>Disable TRACE</web-resource-name>
       <url-pattern>/</url-pattern>
       <http-method>TRACE</http-method>
     </web-resource-collection>
     <auth-constraint/>
-  </security-constraint>
+  </security-constraint> -->
   
 </web-app>
 
