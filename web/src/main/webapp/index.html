@@ -1,4 +1,5 @@
 <html>
+<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
 <script>
 	function showImg (e) {
 		alert(e);
@@ -7,10 +8,33 @@
 	function shit(e) {
 		alert(e);
 	}
+	$(document).ready(function(){
+		  $("#btn").on("click", function(){
+			  $.ajax({
+					async : false,
+					cache : false,
+					type : 'POST',
+					dataType : "json",
+					data : {
+						
+					},
+					url: './samplepricecalc/calculate.do',
+					error: function () {//请求失败处理函数
+						$.messager.alert('错误提示','请求失败！','warning');
+						return false;
+					},
+					success: function(data) {
+						
+						return true;
+					}
+				});
+		  });		
+	});
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<body>
 
+<body>
+<p>ddddddddddddddddddd</p>
 <a href="#" id="zb">abc</a>
 <script type="text/javascript">
 function gid(id){
@@ -25,12 +49,14 @@ function foo(event){
     //document.write("X 坐标: " + event.x + ", Y 坐标: " + event.y);
     //document.write("X 坐标: " + event.screenX + ", Y 坐标: " + event.screenY);
     document.all.div1.innerHTML="X 坐标: " + x + ", Y 坐标: " + y + "<br>" + 
-    "X 坐标: " + event.offsetX + ", Y 坐标: " + event.offsetY 
-    + "<br>X 坐标: " + event.x + ", Y 坐标: " + event.y
-    + "<br>X 坐标: " + event.screenX + ", Y 坐标: " + event.screenY;
+    "offsetX 坐标: " + event.offsetX + ", offsetY 坐标: " + event.offsetY 
+    + "<br>eventX 坐标: " + event.x + ", Y 坐标: " + event.y
+    + "<br>screenX 坐标: " + event.screenX + ", Y 坐标: " + event.screenY;
 }
 
 </script>
+
+<input type="button" value="Hello world!" id="btn">
 <h2>Hello World!</h2>
  <select onchange="showImg(this)">
 	<option value=”img1″>城市生活</option>
