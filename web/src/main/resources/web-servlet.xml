@@ -10,6 +10,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<description>Spring-web MVC配置</description>
 	<context:component-scan base-package="lxj.web.controller" />
+	<context:component-scan base-package="lxj.web.dao" />
 	<!--To enable @RequestMapping process on type level and method level-->
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
@@ -29,6 +30,12 @@
 		<constructor-arg ref="jaxbMarshaller" />
 	</bean>
 
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+	<bean id="viewResolver"	class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="1"></property>
+	</bean>
+		<bean name="xmlViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property name="order" value="2"></property>
+		<property name="location" value="classpath:views.xml">
+		</property>
+	</bean>
 </beans>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"        
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="lxj.web.domain.pojo.Stu" 
+    table="STU"
+>
+
+    <id
+        name="sno"
+        type="java.lang.Long"
+        column="SNO"
+    >
+    <generator class="increment"/>
+       <!--  <generator class="seqhilo">
+        	<param name="sequence">stu_id</param>
+      		<param name="max_lo">100</param>
+      </generator> -->
+    </id>
+
+    <property
+        name="sname"
+        type="java.lang.String"
+        column="SNAME"
+        not-null="true"
+        length="20"
+    />
+    <property
+        name="sex"
+        type="java.lang.String"
+        column="SEX"
+        length="2"
+    />
+    <property
+        name="birthday"
+        type="java.sql.Timestamp"
+        column="BIRTHDAY"
+        length="7"
+    />
+    <property
+        name="email"
+        type="java.lang.String"
+        column="EMAIL"
+        unique="true"
+        length="20"
+    />
+    <property
+        name="score"
+        type="java.math.BigDecimal"
+        column="SCORE"
+        length="5"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to Sc -->
+ <!--    <set
+        name="scs"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="SNO" />
+        </key>
+        <one-to-many 
+            class="airline.hibernate.Sc"
+        />
+    </set>
+    bi-directional many-to-one association to Class
+    <many-to-one
+        name="clazz"
+        class="airline.hibernate.Class"
+        not-null="true"
+    >
+        <column name="CLASSNO" />
+    </many-to-one> -->
+
+</class>
+</hibernate-mapping>
