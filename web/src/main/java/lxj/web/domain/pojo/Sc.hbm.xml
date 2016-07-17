@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"        
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<class 
+    name="lxj.web.domain.pojo.Sc" 
+    table="SC"
+>
+
+    <composite-id>
+        <key-property 
+            name="cno" 
+            column="CNO" 
+            type="java.math.BigDecimal"
+            length="22"
+        />
+        <key-property 
+            name="score" 
+            column="SCORE" 
+            type="java.math.BigDecimal"
+            length="5"
+        />
+    </composite-id>    
+
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->  
+    <!-- bi-directional many-to-one association to Stu -->
+    <many-to-one    name="stu"   class="lxj.web.domain.pojo.Stu"   not-null="true"   >
+        <column name="SNO" />
+    </many-to-one>
+</class>
+</hibernate-mapping>
